@@ -1,0 +1,140 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BASE */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #f4f4f2;
+    color: #111;
+    line-height: 1.6;
+}
+
+/* HERO - Container for the background */
+.hero {
+    height: 70vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 80px;
+    background-image: url("../assets/IMG_3924.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+/* THE TITLE - Standard state */
+.hero-title {
+    font-size: 30px;
+    font-weight: 400;
+    color: #fff;
+    transition: color 0.3s ease;
+    z-index: 1000;
+}
+
+/* THE STICKY STATE - Triggered by JS */
+/* This is what makes it stay at the top of the screen */
+.hero-title.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 80px; /* Matches hero padding */
+    background-image: transparent;
+    color: #111; /* Turn black when scrolling over white page */
+}
+
+/* PROJECTS SECTION */
+.projects {
+    padding: 160px 8%;
+    display: flex;
+    flex-direction: column;
+    gap: 200px;
+}
+
+/* Single Project Layout */
+.project {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.project.reverse {
+    grid-template-columns: 1fr 1.4fr;
+}
+
+.project.reverse .project-image { order: 2; }
+.project.reverse .project-info { order: 1; }
+
+/* IMAGE */
+.project-image img {
+    width: 100%;
+    height: 75vh;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.project-image img:hover {
+    transform: scale(1.03);
+}
+
+/* INFO */
+.project-info {
+    max-width: 420px;
+}
+
+.tag {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888;
+}
+
+.project-info h2 {
+    font-family: "Georgia", serif;
+    font-size: 42px;
+    font-weight: 400;
+    margin: 20px 0;
+}
+
+.project-info p {
+    color: #555;
+    font-size: 16px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+    .hero {
+        height: 70vh;
+        padding: 40px;
+    }
+
+    .hero-title {
+        margin-left: 40px;
+        font-size: 24px;
+        margin-top: -80px;
+    }
+
+    .projects {
+        padding: 100px 40px;
+        gap: 120px;
+    }
+
+    .project {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .project-image img {
+        height: 60vh;
+    }
+
+    .project.reverse .project-image,
+    .project.reverse .project-info {
+        order: initial;
+    }
+}
