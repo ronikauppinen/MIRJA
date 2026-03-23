@@ -7,13 +7,20 @@
   <title>Havainnoiva Mieli</title>
   <link rel="stylesheet" href="style/style.css">
   <link rel="icon" href="assets/Group 272.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
   <meta name="author" content="Roni Kauppinen">
   <meta name="keywords" content="Olet lämpimästi tervetullut vastaanotolleni kun kaipaat tukea ahdistukseen, masennukseen tai muihin mielenterveyden haasteisiin. Tarjoan psykoterapiaa aikuisille (yli 18-vuotiaille) Tampereen ydinkeskustassa sijaitsevalla vastaanotollani tai etävastaanottona koko Suomeen. Olen koulutukseltani psykiatrinen sairaanhoitaja ja kognitiivisen käyttäytymisterapian psykoterapeutti, KKT.[...] ">
   <meta name="description" content="Psykoterapiapalvelu Havainnoiva Mieli">
   <meta name="theme-color" content="#FFD6CF">
 </head>
 
-<body>
+<body><div class="background-blobs">
+      <div class="blob blob1"></div>
+      <div class="blob blob2"></div>
+      <div class="blob blob3"></div>
+    </div>
   <nav class="navbar">
     <div class="nav-container">
       <a href="#hero"><div class="logo"><img src="assets/Group 272.png" alt="icon"></div></a>
@@ -34,19 +41,16 @@
   </nav>
 
   <header class="hero" id="hero">
-    <div class="background-blobs">
-      <div class="blob blob1"></div>
-      <div class="blob blob2"></div>
-      <div class="blob blob3"></div>
+    <div class="hero-element">
+      <h1>Psykoterapiapalvelut <br>Havainnoiva Mieli</h1>
+      
+      <br><p class="subtitle">Mirja Kauppinen</p><br>
+  
+      <a href="#contact" class="cta">Ota yhteyttä</a>
+  
     </div>
-    
-    <div class="hero-glass">
-    <h1>Psykoterapiapalvelut Havainnoiva Mieli</h1>
-    <p class="subtitle">Mirja Kauppinen</p>
-    <a href="#contact" class="cta">Ota yhteyttä</a>
-    </div>
-    
-    </header>
+  
+  </header>
 
 
     <section class="start" id="start">
@@ -133,23 +137,21 @@
     
     <section class="contact" id="contact">
       <h2>Ota Yhteyttä</h2>
-      <div class="contact-grid">
-        <div class="contact-info">
-          <p><strong>Sähköposti</strong><br>mirjakau@gmail.com</p>
-          <p><strong>Sijainti</strong><br>Tampere</p>
-        </div>
+      <p><strong>Ota rohkeasti yhteyttä</strong>, niin sovitaan tapaaminen. Tavoitat minut parhaiten sähköpostilla osoitteesta <a href="mailto:mirjakau@gmail.com">mirjakau@gmail.com</a></p><br>
+      <div class="split">
         <form class="contact-form" action="contact.php" method="POST">
-          <label>Nimi</label>
+          <label>Nimi *</label>
           <input type="text" name="name" required>
           
-          <label>Sähköposti</label>
+          <label>Sähköposti *</label>
           <input type="email" name="email" required>
           
-          <label>Viesti</label>
+          <label>Viesti *</label>
           <textarea name="message" required></textarea>
 
-          <button type="submit">Lähetä viesti</button>
+          <button type="submit" class="cta">Lähetä viesti</button>
         </form>
+        <div class="visual gradient2"></div>
       </div>
     </section>
     
