@@ -30,7 +30,7 @@
         <li><a href="#therapy">Terapia</a></li>
         <li><a href="#KKT">KKT</a></li>
         <li><a href="#prices">Hinnasto</a></li>
-        <li><a href="#contact">Yhteystiedot</a></li>
+        <li><a href="#contact">Ota yhteyttä</a></li>
       </ul>
       <div class="hamburger">
         <span></span>
@@ -135,14 +135,14 @@
       <p><strong>Ota rohkeasti yhteyttä</strong>, niin sovitaan tapaaminen. Tavoitat minut parhaiten sähköpostilla osoitteesta <a href="mailto:mirjakau@gmail.com">mirjakau@gmail.com</a></p><br>
       <div class="split">
         <form class="contact-form" action="contact.php" method="POST">
-          <label>Nimi *</label>
-          <input type="text" name="name" required>
+          <label for="name_for_form">Nimi *</label>
+          <input type="text" name="name" id="name" required>
           
-          <label>Sähköposti *</label>
-          <input type="email" name="email" required>
+          <label for="email_for_form">Sähköposti *</label>
+          <input type="email" name="email" id="email_for_form" required>
           
-          <label>Viesti *</label>
-          <textarea name="message" required></textarea>
+          <label for="message_for_form">Viesti *</label>
+          <textarea name="message" id="message_for_form" required></textarea>
 
           <button type="submit" class="cta">Lähetä viesti</button>
         </form>

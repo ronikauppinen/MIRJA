@@ -160,6 +160,7 @@ a{
 }
 .hero::before{
     background:rgba(255,248,246,0.6);
+    position:fixed;
     background-size: cover;
 }
 .hero-element{
@@ -171,7 +172,7 @@ a{
     display:inline-block;
     margin-top:30px;
     padding:14px 32px;
-    background:#FF8A7A;
+    background:#AF5F55;
     color:#fff;
     text-decoration:none;
     border: none;
@@ -312,7 +313,7 @@ input:focus, textarea:focus, button:focus{
     .hero-element h1{
         margin: 4px;
         font-size:clamp(45px, 4vw, 60px);
-        font-weight:400;
+        font-weight:500;
         line-height:1.05;
         letter-spacing:-1.5px;
     }
@@ -372,5 +373,22 @@ input:focus, textarea:focus, button:focus{
     h2{
         font-size:35px;
         margin-bottom:30px;
+    }
+    .blob1{
+        background:#FF8A7A;
+        top:-150px;
+        left:-100px;
+    }
+    .blob2{
+        background:#FFD6CF;
+        bottom:-200px;
+        right:-500px;
+        animation-delay:6s;
+    }
+    .blob3{
+        background:#FFC2B8;
+        top:40%;
+        left:50%;
+        animation-delay:12s;
     }
 }
