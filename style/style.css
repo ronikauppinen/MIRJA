@@ -160,6 +160,7 @@ a{
 }
 .hero::before{
     background:rgba(255,248,246,0.6);
+    background-size: cover;
 }
 .hero-element{
     max-width:800px; 
@@ -309,8 +310,9 @@ input:focus, textarea:focus, button:focus{
         background-position:center top;
     }
     .hero-element h1{
-        font-size:clamp(48px, 8vw, 86px);
-        font-weight:300;
+        margin: 4px;
+        font-size:clamp(45px, 4vw, 60px);
+        font-weight:400;
         line-height:1.05;
         letter-spacing:-1.5px;
     }
@@ -366,9 +368,6 @@ input:focus, textarea:focus, button:focus{
         margin-left:0 !important;
         padding:80px 10%;
         background: #FFF8F6;
-    }
-    .start{
-        border-radius:0 0 0 0;
     }
     h2{
         font-size:35px;
