@@ -1,12 +1,39 @@
-const title = document.getElementById("mainTitle");
-// Calculate the initial distance from the top of the page to the title
-const stickyTop = title.offsetTop;
+document.querySelectorAll("a[href^='#']").forEach(link => {
+    link.addEventListener("click",function(e){
+        e.preventDefault()
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior:"smooth"
+        })
+    })
+    link.addEventListener("click", function(e){
+        e.preventDefault()
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior:"smooth"
+        })
+    })
+})
+const hamburger = document.querySelector(".hamburger")
+const navLinks = document.querySelector(".nav-links")
 
-window.addEventListener("scroll", () => {
-    // Check if the scroll position has passed the title's original position
-    if (window.scrollY >= stickyTop) {
-        title.classList.add("fixed");
-    } else {
-        title.classList.remove("fixed");
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("active")
+})
+
+/* NEW: close menu on link click */
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active")
+  })
+
+})
+document.addEventListener("click", (e) => {
+
+    if(
+      !e.target.closest(".nav-container")
+    ){
+      navLinks.classList.remove("active")
     }
-});
+    
+    })
