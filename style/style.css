@@ -307,7 +307,12 @@ input:focus, textarea:focus, button:focus{
         height:75vh;
         background-size:cover;
         background-position:center top;
-       
+    }
+    .hero-element h1{
+        font-size:clamp(48px, 8vw, 86px);
+        font-weight:300;
+        line-height:1.05;
+        letter-spacing:-1.5px;
     }
     .nav-links{
         display:none;
