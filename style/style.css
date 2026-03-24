@@ -27,10 +27,20 @@
     box-shadow:0 20px 40px rgba(0,0,0,0.08);
 }
 .gradient1{
-    background:linear-gradient(135deg,#FFD6CF,#FFECE8);
+    background: url("../assets/20220519_163851.jpg") center/cover no-repeat;
+    /*background:linear-gradient(135deg,#FFD6CF,#FFECE8);*/
 }
 .gradient2{
-    background:linear-gradient(135deg,#FFC2B8,#FFE4E0);
+    background: url("../assets/PHOTO-2025-09-08-16-30-47.jpg") center/cover no-repeat;
+    /*background:linear-gradient(135deg,#FFC2B8,#FFE4E0);*/
+}
+.gradient3{
+    background: url("../assets/IMG_3781.jpeg") center/cover no-repeat;
+    /*background:linear-gradient(135deg,#FFC2B8,#FFE4E0);*/
+}
+.gradient4{
+    background: url("../assets/IMG_3779.jpeg") center/cover no-repeat;
+    /*background:linear-gradient(135deg,#FFC2B8,#FFE4E0);*/
 }
 body{
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
@@ -330,15 +340,15 @@ input:focus, textarea:focus, button:focus{
     }
     .nav-links{
         position:absolute;
-        top:70px;
-        left:0;
-        right:0;
-        background:rgba(255, 255, 255, 0.911);
+        padding-top: 70px;
+        top:-10px;
+        right:-15px;
+        background:rgba(228, 202, 202, 0.911);
         backdrop-filter:blur(20px);
         flex-direction:column;
         align-items:center;
-        padding:20px;
-        border-radius:20px;
+        height: 100vh;
+        width: 30vh;
         display:none;
     }
     .nav-links.active{

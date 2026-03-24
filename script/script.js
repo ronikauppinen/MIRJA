@@ -19,8 +19,6 @@ hamburger.addEventListener("click", () => {
   navLinks.classList.toggle("active")
 })
 
-/* NEW: close menu on link click */
-
 document.querySelectorAll(".nav-links a").forEach(link => {
 
   link.addEventListener("click", () => {
@@ -29,11 +27,9 @@ document.querySelectorAll(".nav-links a").forEach(link => {
 
 })
 document.addEventListener("click", (e) => {
-
-    if(
-      !e.target.closest(".nav-container")
-    ){
-      navLinks.classList.remove("active")
-    }
-    
-    })
+  if(
+    !e.target.closest(".nav-container")
+  ){
+    navLinks.classList.remove("active")
+  }
+})
