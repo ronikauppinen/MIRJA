@@ -343,6 +343,12 @@ input:focus, textarea:focus, button:focus{
         top:10px;
         width:95%;
         border-radius:40px;
+        position: fixed;
+        transition: transform 0.3s ease;
+        z-index: 1000;
+    }
+    .navbar.hide {
+        transform: translateY(-150%);
     }
     .overlay.active {
         position: fixed;
@@ -370,7 +376,8 @@ input:focus, textarea:focus, button:focus{
         width: 80vw;
         height: 100vh;
     
-        background: rgba(231, 208, 202, 0.95);
+        background: 
+        linear-gradient(rgba(255, 228, 249, 0.603), rgba(255, 204, 163, 0.753));
         backdrop-filter: blur(20px);
     
         display: flex;

@@ -49,3 +49,18 @@ document.addEventListener("click", (e) => {
   }
 });
 
+const navbar = document.querySelector(".navbar");
+
+let lastScrollY = window.scrollY;
+
+window.addEventListener("scroll", () => {
+  const currentScrollY = window.scrollY;
+
+  if (currentScrollY > lastScrollY && currentScrollY > 50) {
+    navbar.classList.add("hide");
+  } else {
+    navbar.classList.remove("hide");
+  }
+
+  lastScrollY = currentScrollY;
+});
