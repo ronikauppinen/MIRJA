@@ -314,6 +314,9 @@ input:focus, textarea:focus, button:focus{
 .overlay {
     display: none;
 }
+.no-scroll {
+    overflow: hidden;
+  }
 
 /* -- MOBILE -- */
 
@@ -350,7 +353,9 @@ input:focus, textarea:focus, button:focus{
         width: 100vw;
         height: 100vh;
         backdrop-filter: blur(200px);
-        background: rgb(194, 129, 129); /* or any color */
+        background: 
+        linear-gradient(rgba(255, 105, 180, 0.4), rgba(255, 105, 180, 0.4)),
+        url("../assets/20220601_180514.jpg");
         z-index: 800;
     }
     .overlay {

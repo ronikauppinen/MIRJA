@@ -21,6 +21,7 @@ hamburger.addEventListener("click", () => {
   navLinks.classList.toggle("active");
   hamburger.classList.toggle("active");
   overlay.classList.toggle("active");
+  document.body.classList.toggle("no-scroll");
 });
 
 document.querySelectorAll(".nav-links a").forEach(link => {
@@ -28,6 +29,7 @@ document.querySelectorAll(".nav-links a").forEach(link => {
     navLinks.classList.remove("active");
     hamburger.classList.remove("active");
     overlay.classList.remove("active");
+    document.body.classList.remove("no-scroll");
   });
 });
 
@@ -35,6 +37,7 @@ overlay.addEventListener("click", () => {
   navLinks.classList.remove("active");
   hamburger.classList.remove("active");
   overlay.classList.remove("active");
+  document.body.classList.remove("no-scroll");
 });
 
 document.addEventListener("click", (e) => {
@@ -42,6 +45,7 @@ document.addEventListener("click", (e) => {
     navLinks.classList.remove("active");
     hamburger.classList.remove("active");
     overlay.classList.remove("active");
+    document.body.classList.remove("no-scroll");
   }
 });
 
