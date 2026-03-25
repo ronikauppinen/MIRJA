@@ -226,6 +226,9 @@ section{
 .contact{
     border-radius: 0 0 30px 30px;
 }
+.data{
+    border-radius: 0 0 30px 30px;
+}
 h2{
     font-size:35px;
     margin-bottom:30px;
@@ -360,7 +363,7 @@ input:focus, textarea:focus, button:focus{
         height: 100vh;
         backdrop-filter: blur(200px);
         background: 
-        linear-gradient(rgba(255, 105, 180, 0.4), rgba(255, 105, 180, 0.4)),
+        linear-gradient(rgba(209, 148, 104, 0.5), rgba(211, 111, 158, 0.5)),
         url("../assets/20220601_180514.jpg");
         z-index: 800;
     }
@@ -372,13 +375,16 @@ input:focus, textarea:focus, button:focus{
         position: fixed;
         top: 0;
         left: 0;
-        margin-left: 20%;
-        width: 80vw;
+        margin-left: 40%;
+        width: 60vw;
         height: 100vh;
+
+border-radius: 10px 0 0 10px;
+transition: all 0.25s ease;
     
-        background: 
-        linear-gradient(rgba(255, 228, 249, 0.603), rgba(255, 204, 163, 0.753));
-        backdrop-filter: blur(20px);
+        background:rgba(255,248,246,0.6);
+backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(20px);
     
         display: flex;
         flex-direction: column;
@@ -391,6 +397,9 @@ input:focus, textarea:focus, button:focus{
         transition: transform 0.35s ease;
     
         z-index: 900;
+        border-top: 1px solid rgba(255,255,255,0.3);
+border-left: 1px solid rgba(255,255,255,0.15);
+box-shadow: inset 0 1px 1px rgba(255,255,255,0.2);
     }
     .navbar:has(.nav-links.active){
         width: 100%;
@@ -427,6 +436,7 @@ input:focus, textarea:focus, button:focus{
     .hamburger{
         display:flex;
         z-index:1000;
+        border-radius: 50%;
     }
     .split{
         grid-template-columns:1fr;
