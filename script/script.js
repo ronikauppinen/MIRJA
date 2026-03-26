@@ -12,40 +12,54 @@ document.querySelectorAll("a[href^='#']").forEach(link => {
         })
     })
 })
-const hamburger = document.querySelector(".hamburger")
-const navLinks = document.querySelector(".nav-links")
-const overlay = document.querySelector(".overlay")
 
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+const overlay = document.querySelector(".overlay");
 
-hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-  hamburger.classList.toggle("active");
-  overlay.classList.toggle("active");
-  document.body.classList.toggle("no-scroll");
-});
+function openMenu() {
+  navLinks.classList.add("active");
+  hamburger.classList.add("active");
+  overlay.classList.add("active");
+  document.body.classList.add("no-scroll");
 
-document.querySelectorAll(".nav-links a").forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("active");
-    hamburger.classList.remove("active");
-    overlay.classList.remove("active");
-    document.body.classList.remove("no-scroll");
-  });
-});
+  hamburger.setAttribute("aria-expanded", "true");
 
-overlay.addEventListener("click", () => {
+  const firstLink = navLinks.querySelector("a");
+  if (firstLink) {
+    firstLink.focus();
+  }
+}
+
+function closeMenu() {
   navLinks.classList.remove("active");
   hamburger.classList.remove("active");
   overlay.classList.remove("active");
   document.body.classList.remove("no-scroll");
+
+  hamburger.setAttribute("aria-expanded", "false");
+}
+
+hamburger.addEventListener("click", () => {
+  const isOpen = hamburger.classList.contains("active");
+
+  if (isOpen) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
 });
 
-document.addEventListener("click", (e) => {
-  if (!e.target.closest(".nav-container")) {
-    navLinks.classList.remove("active");
-    hamburger.classList.remove("active");
-    overlay.classList.remove("active");
-    document.body.classList.remove("no-scroll");
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", closeMenu);
+});
+
+overlay.addEventListener("click", closeMenu);
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    closeMenu();
+    hamburger.focus();
   }
 });
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 
 <head>
   <meta charset="UTF-8">
@@ -23,7 +23,7 @@
     <div class="blob blob3"></div>
   </div>
   
-  <nav class="navbar">
+  <nav class="navbar" aria-label="Main navigation">
     <div class="nav-container">
     <div class="overlay">
     </div>
@@ -36,11 +36,11 @@
         <li><a href="#prices">Hinnasto</a></li>
         <li><a href="#contact">Ota yhteyttä</a></li>
       </ul>
-      <div class="hamburger">
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </button>
     </div>
   </nav>
 
@@ -142,7 +142,7 @@
           <p>102,60 € /45 min</p>
           <h3>Tutustumiskäynti</h3>
           <p>75 €</p>
-          <h3>Kelakorvaus 57,60 euroa / 45 min (asiakkaan omavastuu terapiakäynnistä on 45 euroa)</h3>
+          <h3>Kelakorvaus 57,60 € / 45 min (asiakkaan omavastuu terapiakäynnistä on 45 euroa)</h3>
           <p>Huomaathan, että tutustumiskäynti ei sisälly Kela-korvauksen piiriin.</p>
         </div>
       </div>
@@ -154,10 +154,10 @@
       <div class="split">
         <form class="contact-form" action="contact.php" method="POST">
           <label for="name_for_form">Nimi *</label>
-          <input type="text" name="name" id="name_for_form" required>
+          <input type="text" name="name" id="name_for_form" required  autocomplete="name">
           
           <label for="email_for_form">Sähköposti *</label>
-          <input type="email" name="email" id="email_for_form" required>
+          <input type="email" name="email" id="email_for_form" required  autocomplete="email">
           
           <label for="message_for_form">Viesti *</label>
           <textarea name="message" id="message_for_form" required></textarea>

@@ -277,18 +277,31 @@ input:focus, textarea:focus, button:focus{
 
 /* HAMBURGER */
 
-.hamburger{
-    display:none;
-    flex-direction:column;
-    gap:5px;
-    cursor:pointer;
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+
+    /* reset button styles */
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    appearance: none;
+    -webkit-appearance: none;
 }
+
 .hamburger span{
     width:22px;
     height:2px;
     background:#1C1C1E;
     display:block;
 }
+.hamburger:focus {
+    outline: 2px solid #a1a1a7;
+    outline-offset: 4px;
+  }
 
 /* NON MOBILE BLOB */
 
@@ -411,11 +424,6 @@ input:focus, textarea:focus, button:focus{
         gap: 12px;
         font-size: 14px;
     }
-    .hamburger{
-        display:flex;
-        z-index:1000;
-        border-radius: 50%;
-    }
     .split{
         grid-template-columns:1fr;
         gap:40px;
@@ -460,6 +468,12 @@ input:focus, textarea:focus, button:focus{
         left:50%;
         animation-delay:12s;
     }
+    .hamburger{
+        display:flex;
+        z-index:1000;
+        border-radius: 50%;
+    }
+    
     .hamburger.active span:nth-child(1){
         transform: rotate(45deg) translate(5px, 5px);
     }
@@ -475,5 +489,4 @@ input:focus, textarea:focus, button:focus{
     .hamburger span{
         transition: all 0.3s ease;
     }
-    
 }
