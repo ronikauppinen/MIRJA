@@ -26,22 +26,6 @@
     overflow:hidden;
     box-shadow:0 20px 40px rgba(0,0,0,0.08);
 }
-.gradient1{
-    background: url("../assets/20220519_163851.jpg") center/cover no-repeat;
-    /*background:linear-gradient(135deg,#FFD6CF,#FFECE8);*/
-}
-.gradient2{
-    background: url("../assets/PHOTO-2025-09-08-16-30-47.jpg") center/cover no-repeat;
-    /*background:linear-gradient(135deg,#FFC2B8,#FFE4E0);*/
-}
-.gradient3{
-    background: url("../assets/IMG_3781.jpeg") center/cover no-repeat;
-    /*background:linear-gradient(135deg,#FFC2B8,#FFE4E0);*/
-}
-.gradient4{
-    background: url("../assets/IMG_3779.jpeg") center/cover no-repeat;
-    /*background:linear-gradient(135deg,#FFC2B8,#FFE4E0);*/
-}
 body{
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
     background: url("../assets/20220601_180514.jpg") center/cover no-repeat fixed;
@@ -378,28 +362,22 @@ input:focus, textarea:focus, button:focus{
         margin-left: 40%;
         width: 60vw;
         height: 100vh;
-
-border-radius: 10px 0 0 10px;
-transition: all 0.25s ease;
-    
+        border-radius: 10px 0 0 10px;
+        transition: all 0.25s ease;
         background:rgba(255,248,246,0.6);
-backdrop-filter: blur(20px);
--webkit-backdrop-filter: blur(20px);
-    
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         display: flex;
         flex-direction: column;
         gap: 22px;
-    
         padding: 100px 30px;
         list-style: none;
-    
         transform: translateX(100vw);
         transition: transform 0.35s ease;
-    
         z-index: 900;
         border-top: 1px solid rgba(255,255,255,0.3);
-border-left: 1px solid rgba(255,255,255,0.15);
-box-shadow: inset 0 1px 1px rgba(255,255,255,0.2);
+        border-left: 1px solid rgba(255,255,255,0.15);
+        box-shadow: inset 0 1px 1px rgba(255,255,255,0.2);
     }
     .navbar:has(.nav-links.active){
         width: 100%;
