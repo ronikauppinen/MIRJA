@@ -137,18 +137,19 @@
       <h2>Ota Yhteyttä</h2>
       <p><strong>Ota rohkeasti yhteyttä</strong>, niin sovitaan tapaaminen. Tavoitat minut parhaiten sähköpostilla osoitteesta <a href="mailto:mirjakau@gmail.com">mirjakau@gmail.com</a></p><br>
       <div class="split">
-        <form class="contact-form" action="https://fabform.io/f/zz3Ovmf" method="POST">
-          <label for="name_for_form">Nimi *</label>
-          <input type="text" name="name" id="name_for_form" required  autocomplete="name">
+        <form class="contact-form" id="contactForm">
+          <label for="name">Nimi *</label>
+          <input type="text" name="name" id="name" required  autocomplete="name">
           
-          <label for="email_for_form">Sähköposti *</label>
-          <input type="email" name="email" id="email_for_form" required  autocomplete="email">
+          <label for="email">Sähköposti *</label>
+          <input type="email" name="email" id="email" required  autocomplete="email">
           
-          <label for="message_for_form">Viesti *</label>
-          <textarea name="message" id="message_for_form" required></textarea>
+          <label for="message">Viesti *</label>
+          <textarea name="message" id="message" required></textarea>
+          <div class="g-recaptcha" data-sitekey="6LciO6EsAAAAACgorsQJI4_NvCHhj1YYZqVe2UJh"></div>
           
           <button type="submit" class="cta">Lähetä viesti</button>
-          <br><br>
+          <br><div id="messageContainer"></div><br>
           <a href="/assets/Tietosuojaseloste 2026.docx.pdf">tietosuojaseloste</a>
         </form>
         <div class="visual">
@@ -167,6 +168,8 @@
       <a href="/assets/Omavalvontasuunnitelma_MinduuPro_2026.docx.pdf">Omavalvontasuunnitelma</a>
     </footer>
     
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="script/script.js"></script>
+    <script src="https://fabform.io/js/fabform.js"></script>
   </body>
 </html>
