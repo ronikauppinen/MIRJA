@@ -26,6 +26,18 @@
     overflow:hidden;
     box-shadow:0 20px 40px rgba(0,0,0,0.08);
 }
+.visual1{
+    height:610px;
+    width: auto;
+    border-radius:28px;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+.visual2{
+    width: auto;
+    position:relative;
+}
 body{
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
     background: url("../assets/20220601_180514.jpg") center/cover no-repeat fixed;
@@ -308,9 +320,6 @@ input:focus, textarea:focus, button:focus{
 .mobile_div {
     display:none;
 }
-.dt_div {
-    display:flex;
-}
 .overlay {
     display: none;
 }
@@ -431,8 +440,8 @@ input:focus, textarea:focus, button:focus{
     .visual{
         height:260px;
     }
-    .dt_div {
-        display:none;
+    .visual2{
+        height:560px;
     }
     .mobile_div {
         display:flex;
