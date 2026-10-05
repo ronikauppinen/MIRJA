@@ -78,3 +78,32 @@ window.addEventListener("scroll", () => {
 
   lastScrollY = currentScrollY;
 });
+
+const form = document.querySelector(".contact-form");
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const name = document.querySelector("#name_for_form").value;
+    const email = document.querySelector("#email_for_form").value;
+    const message = document.querySelector("#message_for_form").value;
+
+    fetch("https://ronik.life/api/contact.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            name: name,
+            email: email,
+            message: message
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.error("Error:", error);
+    });
+});
