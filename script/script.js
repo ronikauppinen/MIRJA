@@ -78,7 +78,6 @@ window.addEventListener("scroll", () => {
 
   lastScrollY = currentScrollY;
 });
-
 const form = document.querySelector(".contact-form");
 
 form.addEventListener("submit", function(event) {
