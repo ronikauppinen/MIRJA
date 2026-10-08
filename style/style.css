@@ -40,6 +40,9 @@
     overflow:hidden;
     position:relative;
 }
+.hidden_form{
+    display: none;
+} 
 .portrait-img{
     width: 100%;
     height: 100%;
