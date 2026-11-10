@@ -357,6 +357,9 @@ input:focus, textarea:focus, button:focus{
     opacity: 0.5;
     cursor: not-allowed;
 }
+/*
+  trap
+*/
 .form-trap {
     position: absolute;
     left: -9999px;
