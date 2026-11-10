@@ -78,7 +78,6 @@ window.addEventListener("scroll", () => {
 
   lastScrollY = currentScrollY;
 });
-
 const form = document.querySelector(".contact-form");
 const status = document.querySelector("#form-status");
 const submitButton = form.querySelector('button[type="submit"]');
@@ -89,7 +88,9 @@ form.addEventListener("submit", async function(event) {
     if (!form.reportValidity()) return;
 
     submitButton.disabled = true;
-    status.textContent = "Viestiä lähetetään...";
+
+    status.hidden = false;
+    status.textContent = "Lähetetään viestiä...";
     status.className = "form-sending";
 
     try {
@@ -101,18 +102,22 @@ form.addEventListener("submit", async function(event) {
         const data = await response.json();
 
         if (!response.ok || !data.success) {
-            throw new Error(data.message || "Something went wrong.");
+            throw new Error(data.message || "Viestin lähettäminen epäonnistui.");
         }
 
-        status.textContent = "Kiitos! Viestisi on lähetetty.";
-        status.className = "form-success";
-
+        // Empty the form
         form.reset();
+
+        // Show confirmation
+        status.hidden = false;
+        status.textContent = "Kiitos viestistäsi! Viestisi on lähetetty onnistuneesti.";
+        status.className = "form-success";
 
     } catch (error) {
         console.error("Contact form error:", error);
 
-        status.textContent = "Sorry, something went wrong. Please try again later.";
+        status.hidden = false;
+        status.textContent = "Viestin lähettäminen epäonnistui. Yritä myöhemmin uudelleen.";
         status.className = "form-error";
 
     } finally {
