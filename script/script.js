@@ -80,21 +80,42 @@ window.addEventListener("scroll", () => {
 });
 
 const form = document.querySelector(".contact-form");
+const status = document.querySelector("#form-status");
+const submitButton = form.querySelector('button[type="submit"]');
 
-form.addEventListener("submit", function(event) {
+form.addEventListener("submit", async function(event) {
     event.preventDefault();
 
-    const formData = new FormData(form);
+    if (!form.reportValidity()) return;
 
-    fetch("https://ronik.life/api/contact.php", {
-        method: "POST",
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-    })
-    .catch(error => {
-        console.error("Error:", error);
-    });
+    submitButton.disabled = true;
+    status.textContent = "Viestiä lähetetään...";
+    status.className = "form-sending";
+
+    try {
+        const response = await fetch("https://ronik.life/api/contact.php", {
+            method: "POST",
+            body: new FormData(form)
+        });
+
+        const data = await response.json();
+
+        if (!response.ok || !data.success) {
+            throw new Error(data.message || "Something went wrong.");
+        }
+
+        status.textContent = "Kiitos! Viestisi on lähetetty.";
+        status.className = "form-success";
+
+        form.reset();
+
+    } catch (error) {
+        console.error("Contact form error:", error);
+
+        status.textContent = "Sorry, something went wrong. Please try again later.";
+        status.className = "form-error";
+
+    } finally {
+        submitButton.disabled = false;
+    }
 });

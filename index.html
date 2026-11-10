@@ -145,10 +145,16 @@
           
           <label for="message_for_form">Viesti *</label>
           <textarea name="message" id="message_for_form" required></textarea>
+
+          <div class="form-trap" aria-hidden="true">
+            <label for="website">Leave this field empty</label>
+            <input type="text"  name="website" id="website" tabindex="-1" autocomplete="off">
+          </div>
           
           <button type="submit" class="cta">Lähetä viesti</button>
           <br><br>
         </form>
+        <div id="form-status" role="status" aria-live="polite"></div>
         <div class="visual">
           <img src="assets/field.jpg" class="visual-img" alt="Landscape with a grassy field under a partly cloudy sky. Tall trees line the horizon on the left and right.">
         </div>

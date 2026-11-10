@@ -336,7 +336,34 @@ input:focus, textarea:focus, button:focus{
 }
 .no-scroll {
     overflow: hidden;
-  }
+}
+#form-status {
+    margin-top: 15px;
+}
+
+.form-sending {
+    opacity: 0.7;
+}
+
+.form-success {
+    color: #248a50;
+}
+
+.form-error {
+    color: #d93636;
+}
+
+.contact-form button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.form-trap {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
 
 /* -- MOBILE -- */
 
