@@ -78,6 +78,7 @@ window.addEventListener("scroll", () => {
 
   lastScrollY = currentScrollY;
 });
+
 const form = document.querySelector(".contact-form");
 const status = document.querySelector("#form-status");
 const submitButton = form.querySelector('button[type="submit"]');
@@ -88,7 +89,6 @@ form.addEventListener("submit", async function(event) {
     if (!form.reportValidity()) return;
 
     submitButton.disabled = true;
-
     status.hidden = false;
     status.textContent = "Lähetetään viestiä...";
     status.className = "form-sending";
@@ -105,22 +105,23 @@ form.addEventListener("submit", async function(event) {
             throw new Error(data.message || "Viestin lähettäminen epäonnistui.");
         }
 
-        // Empty the form
         form.reset();
 
-        // Show confirmation
-        status.hidden = false;
         status.textContent = "Kiitos viestistäsi! Viestisi on lähetetty onnistuneesti.";
         status.className = "form-success";
 
     } catch (error) {
         console.error("Contact form error:", error);
 
-        status.hidden = false;
         status.textContent = "Viestin lähettäminen epäonnistui. Yritä myöhemmin uudelleen.";
         status.className = "form-error";
 
     } finally {
+        // Turnstile tokens can only be used once.
+        if (window.turnstile) {
+            window.turnstile.reset();
+        }
+
         submitButton.disabled = false;
     }
 });
